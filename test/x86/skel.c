@@ -1808,7 +1808,7 @@ test_simde_mm512_xxx_ps_mask (SIMDE_MUNIT_TEST_ARGS) {
     simde__m512 a = simde_mm512_loadu_ps(test_vec[i].a);
     simde__m512 b = simde_mm512_loadu_ps(test_vec[i].b);
     simde__mmask16 r = simde_mm512_xxx_ps_mask(a, b);
-    simde_assert_mmask16(r, ==, test_vec[i].r);
+    simde_assert_equal_mmask16(r, test_vec[i].r);
   }
 
   return 0;

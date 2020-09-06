@@ -3366,13 +3366,13 @@ test_simde_mm_cmp_pd (SIMDE_MUNIT_TEST_ARGS) {
     b = simde_mm_loadu_pd(test_vec[i].bn);
     SIMDE_CONSTIFY_32_(simde_mm_cmp_pd, rt, simde_mm_setzero_pd(), HEDLEY_STATIC_CAST(int, i), a, b);
     r = simde_mm_castpd_si128(rt);
-    simde_test_x86_assert_equal_i32x4(r, simde_x_mm_loadu_epi64(test_vec[i].rn));
+    simde_test_x86_assert_equal_i64x2(r, simde_x_mm_loadu_epi64(test_vec[i].rn));
 
     a = simde_mm_loadu_pd(test_vec[i].a2n);
     b = simde_mm_loadu_pd(test_vec[i].b2n);
     SIMDE_CONSTIFY_32_(simde_mm_cmp_pd, rt, simde_mm_setzero_pd(), HEDLEY_STATIC_CAST(int, i), a, b);
     r = simde_mm_castpd_si128(rt);
-    simde_test_x86_assert_equal_i32x4(r, simde_x_mm_loadu_epi64(test_vec[i].r2n));
+    simde_test_x86_assert_equal_i64x2(r, simde_x_mm_loadu_epi64(test_vec[i].r2n));
   }
 
   return 0;

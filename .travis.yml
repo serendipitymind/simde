@@ -142,6 +142,7 @@ jobs:
     - sudo /opt/ibm/xlC/${XLC_VERSION}/bin/xlc_configure <<< 1 >/dev/null
     env:
     - ARCH_FLAGS=-qarch=auto
+    - OPTIMIZATION_FLAGS="-O1"
     - C_COMPILER=xlc
     - CXX_COMPILER=xlc++
 
